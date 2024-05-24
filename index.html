@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thompson Development Alliance</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="sticky-header" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/TDA.jpg" alt="TDA Logo" id="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
+                <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading display-4">Welcome to Thompson Development Alliance</h1>
+            <h2 class="jumbotron-heading display-4">(TDA)</h2>
+        </div>
+    </section>
+
+    <section id="about-us" class="text-center my-5">
+        <div class="container">
+            <h2 class="mb-4">About Us</h2>
+            <p class="lead text-muted">Thompson Development Alliance (TDA) is dedicated to fostering community
+                development and educational opportunities. Our mission is to support local initiatives that enhance the
+                quality of life and provide resources for sustainable growth.</p>
+            <div id="moreAboutUs" class="collapse">
+                <p class="lead text-muted">We collaborate with various stakeholders, including educational institutions,
+                    local governments, and non-profit organizations, to implement programs that benefit the community. Join
+                    us in making a positive impact.</p>
+            </div>
+            <button id="moreAboutUsButton" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#moreAboutUs"
+                aria-expanded="false" aria-controls="moreAboutUs">
+                Read More
+            </button>
+
+        </div>
+    </section>
+
+    <section id="meet-ceo" class="text-center my-5">
+        <div class="container">
+            <h2 class="mb-4">Meet the CEO</h2>
+            <p><img src="images/CEO.jpg" alt="CEO" class="img-fluid rounded-circle mb-3" style="max-width: 200px;"></p>
+            <p class="lead text-muted">Our CEO, <b>William T. Thompson</b>, welcomes you to our website.</p>
+        </div>
+    </section>
+
+    <section id="activities" class="container my-5">
+        <h2>Ongoing Activities</h2>
+        <p>Details about various activities...</p>
+        <button class="btn btn-primary"
+            onclick="document.getElementById('internship-section').scrollIntoView();">Student Internship Program
+            Application</button>
+    </section>
+
+    <section id="internship-section" class="container my-5">
+        <h2>Apply for the Internship</h2>
+        <form id="internship-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <select class="form-control" id="location" required>
+                    <option value="">Select Location</option>
+                    <option value="totota">Totota</option>
+                    <option value="salala">Salala</option>
+                    <option value="location1">Location1</option>
+                    <option value="location2">Location2</option>
+                    <option value="location3">Location3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="school">School</label>
+                <select class="form-control" id="school" required>
+                    <option value="">Select School</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="resume">Resume</label>
+                <input type="file" class="form-control-file" id="resume" required>
+            </div>
+            <div class="form-group">
+                <label for="coverLetter">Cover Letter</label>
+                <input type="file" class="form-control-file" id="coverLetter" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <section id="news" class="container my-5">
+        <h2>News and Announcements</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="images\TDA_students.jpg" class="card-img-top" alt="News 1">
+                    <div class="card-body">
+                        <p class="card-text">Applications to apply for the Stdundent Internship program is ongoing.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="https://web.facebook.com/profile.php?id=100041623235956" class="btn btn-sm btn-outline-secondary">Read More</a>
+                            <small class="text-muted">May 24, 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for more news articles -->
+        </div>
+    </section>
+
+    <footer class="bg-light py-4">
+        <div class="container text-center">
+            <p>© 2024 Thompson Development Alliance. All rights reserved.</p>
+            <div>
+                <a href="#" class="mx-2">Facebook</a>
+                <a href="#" class="mx-2">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
