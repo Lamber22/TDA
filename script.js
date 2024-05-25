@@ -47,18 +47,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    var aboutUsLink = document.querySelector(".nav-link[href='#about-us']");
+    const navbarHeight = document.querySelector("#sticky-header").offsetHeight;
 
-    aboutUsLink.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default link behavior
+    document.querySelectorAll('a.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
 
-        var headerHeight = document.getElementById("sticky-header").offsetHeight;
-        var aboutUsSection = document.getElementById("about-us");
-        var aboutUsSectionTop = aboutUsSection.offsetTop - headerHeight;
-
-        window.scrollTo({
-            top: aboutUsSectionTop,
-            behavior: "smooth"
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - navbarHeight,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
+
+    // Apply Now button
+    const applyButton = document.querySelector('#apply-now-button');
+    applyButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-target');
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - navbarHeight,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
+
+
+
